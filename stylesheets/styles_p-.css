@@ -84,7 +84,7 @@ code i        { font-size: 90%;
                 -webkit-touch-callout: none; /* ??? */
                 -webkit-user-select : none; /* Chrome all / Safari all */
                 -khtml-user-select  : none;  /* KDE */
-                x-moz-user-select    : none; /* Firefox all */
+                -moz-user-select    : none; /* Firefox all */
                 -ms-user-select     : none; /* IE 10+ */
                 /* No support for these yet, use at own risk */
                 /**/-o-user-select  : none;
