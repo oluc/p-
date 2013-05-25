@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>p- by oluc</title>
+    <link rel="shortcut icon" href="images/p-_32.ico">
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/styles_p-.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
@@ -15,62 +17,573 @@
 
   </head>
   <body>
-
       <header>
-        <h1>p-</h1>
-        <p></p>
+        <a href="">
+          <h1>p-</h1>
+          <p>a simple package manager</p>
+        </a>
       </header>
-
       <div id="banner">
         <span id="logo"></span>
-
-        <a href="https://github.com/oluc/p-" class="button fork"><strong>View On GitHub</strong></a>
+        <a href="https://github.com/oluc/p-" class="button"><strong>Source code</strong></a>
+        <a href="https://github.com/oluc/p-/issues" class="button fork">bugs, ideas, feedback</a>
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
+            <!--<li><a href="https://github.com/oluc/p-/..." class="button">.deb</a></li>-->
             <li><a href="https://github.com/oluc/p-/zipball/master" class="button">ZIP</a></li>
             <li><a href="https://github.com/oluc/p-/tarball/master" class="button">TAR</a></li>
           </ul>
         </div>
       </div><!-- end banner -->
-
-
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section><h1>About p-</h1>
-        <p></p>
-      </section>
-      <section><h1>Installation</h1>
-        <p></p>
-      </section>
-      <section><h1>Usage</h1>
-         <section><h2>Querying installed packages</h2>
-           <p></p>
-         </section>
-         <section><h2>Installing packges</h2>
-           <p></p>
-         </section>
-         <section><h2>Removing packages, cleaning up</h2>
-           <p></p>
-         </section>
-         <section><h2>Rebuilding packges</h2>
-           <p></p>
-         </section>
-      </section>
-      <section><h1></h1>
-        <p></p>
-      </section>
+      <nav><ul></ul></nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section>
+
+<!-- DEFINITION -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<pre class="definition" style="background: white;">
+<b>Sim·plic·i·ty:</b> /simˈplisitē/, Noun
+1. The quality or condition of being <b>easy to understand</b> or do.
+2. The quality or condition of being <b>plain or natural</b>.
+Synonym: <b>plainness</b>
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<pre class="definition" style="background: white; margin-bottom: 4ex;">
+<b>plain:</b> /plān/, Adjective
+1. <b>Free from obstructions</b>; open; clear: in plain view.
+2. <b>Obvious to the mind</b>; evident: make one's intention plain.
+3. Not elaborate or complicated; simple: plain food.
+</pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- PHOTO -->
+<div class="figure" id="simple-package">
+     <img src="images/flickr__4764967510_7404c320bb_o__CC-BY-NC.png">
+     <p class="figurecaption"><b>Simple packaging requires simple packaging system</b><br/> — photo by <a href="http://www.flickr.com/photos/thesecondfiddle/4764967510">the second fiddle</a></p>
+     <!-- (<a class="cc" href="http://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>) -->
+</div>
+
+
+
+<!-- HEADING -->
+<h1>About <q class="p">p-</q></h1>
+
+
+
+<ul style="padding-left: 15px;">
+  <li><q class="p">p-</q> is a <b>simple package manager</b> for <b>Debian</b> based systems,
+      like <a href="http://www.debian.org">Debian</a> 
+      and  <a href="http://www.ubuntu.com">Ubuntu</a>.
+  </li>
+  <li><q class="p">p-</q> is <b>simply a wrapper</b> to Debian package management.</li>
+  <li><q class="p">p-</q> <b>unifies calls</b> to dpkg, apt-cache, apt-get, etc.</li>
+  <li><q class="p">p-</q> commands are <b>all 'p-' prefixed</b>.</li>
+  <li><q class="p">p-</q> commands are <b>simply shell aliases</b>, so you can use all the original panameters.</li>
+  <li><q class="p">p-</q> includes commands for <b>most common tasks</b>.</li>
+</ul>
+
+<div style="clear: both;"></div><!-- clear floating -->
+
+<h2>Example</h2>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<pre><code><i>The Debian way</i>
+<b><em>apt-cache</em> search     foo</b>        <i>apt-cache, apt-get, dpkg, etc.</i>
+<b>sudo <em>apt-get</em> install foobar</b>     <i>sudo or not sudo (that is the question)</i>
+<b>sudo apt-<em>get remove</em>  foobar</b>     <i>get or remove? Does not make sense</i>
+<b>sudo <em>dpkg</em>  <em>--</em>install foobar.deb</b> <i>install vs --install, I never remember</i>
+<b>sudo <em>add-apt-repository</em> ppa:foobar-plusplus</b>  <i>one more app to remember</i>
+
+<i>The <q>p-</q> way</i>
+<b><em>p-</em>search      foo</b>
+<b><em>p-</em>install     foobar</b>
+<b><em>p-</em>remove      foobar</b>
+<b><em>p-</em>install-deb foobar.deb</b>
+<b><em>p-</em>add-ppa     ppa:foobar-plusplus</b>
+
+<i>Plain simple.</i>
+</code></pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<img src="images/balancoire-fail.png" />
+
+<center><img src="images/balancoire-success.png"/></center>
+
+<!--                    -o-                       -->
+<center>
+<p style="font-size: 250%; margin-top: 4ex;"><q class="p">p-</q></p>
+<p style="font-style: italic">a simple package manager</p>
+</center>
+<!--                    -o-                       -->
+</section>
+
+
+
+<section><h1>Installation</h1>
+
+<p>OK, <b>you absolutely must install this</b>. <br/>
+  Two steps, install the dependencies, 
+  then install <q class="p">p-</q> itself.</p>
+
+<h3>1. Dependencies</h3>
+<p><q class="p">p-</q> depends on</p>
+<dl id="srdg">
+<style>#srdg dt {       width: 160px; } #srdg dd { margin-left: 160px; }</style>
+<dt>Basic debian tools   </dt> <dd><b>dpkg, apt-get, aptitude</b></dd>
+<dt>Advanced debian tools</dt> <dd><b>dch, dpkg-source, dpkg-buildpackage</b></dd>
+<dt>Dirty Debian hack    </dt> <dd><b>locale-purge</b></dd>
+<dt>Standard Linux tools </dt> <dd><b>bash, grep, sed, column, less</b></dd>
+</dl>
+
+<p>
+Most of them should be <b>already installed</b> on your Debian based system. 
+Install the potentially missing packages. For example:
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<pre><code><b>sudo apt-get install aptitude locale-purge</b>
+<b>sudo apt-get install dch dpkg-source dpkg-buildpackage</b>
+</code></pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+This is the last time you will use <code>apt-get</code> for such simple task. 
+</p>
+
+<h3>2. Installing <q class="p">p-</q></h3>
+
+<ol>
+<li>Download the <q class="p">p-</q> package</li>
+<li>Save p-package-manager.sh into your <code>~/.bash.d/</code></li>
+<li><code>source</code> it, or add it to your <code>.bashrc</code></li>
+</ol>
+
+<pre><code><b>wget https://github.com/oluc/p-/tarball/master -O oluc-p-.tgz</b>
+<b>tar zxf oluc-p-.tgz</b>                          <i>Download and uncompress</i>
+<b>cd oluc-p-*</b>                                  <i>Go into the new directory</i>
+<b>cp p-package-manager.sh <em>~/.bash.d/</em></b>           <i>Install the script</i>
+<b>cat <em>>></em> ~/.bashrc                             <i>Append to .bashrc</i>
+if [ -f ~/.bash.d/p-package-manager.sh ]; then
+      <em>.</em> ~/.bash.d/p-package-manager.sh         <i>The dot is important!</i>
+fi                                             <i>Copy until here</i>
+<i><em>^D</em></i>                                             <i>Press <code>Ctrl-D</code></i>
+</b>                               <i>NOTE: you can copy/paste these commands,
+                                   the comments should be skipped automatically.</i>
+<i>That's it.</i>
+</code></pre>
+
+<p>That's it. You can run <code>p-help</code> to start with.</p>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<pre><code><b><em>p-help</em></b>
+...
+</code></pre>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+<!--                    -o-                       -->
+<center>
+<p style="font-size: 250%; margin-top: 4ex;"><q class="p">p-</q></p>
+<p style="font-style: italic">a simple package manager</p>
+</center>
+<!--                    -o-                       -->
+</section>
+
+
+
+
+<section><h1>Usage</h1>
+<style>
+h2.ol.start  { counter-reset     : li-h3;}
+h2.ol:before { counter-increment : li-h3;}
+h2.ol:before { content           : counter(li-h3) ". ";}
+h2.ol.end    { counter-reset     : li-h3;}
+</style>
+
+<h2 class="ol start">Getting help</h2>
+
+<p>You can always run <code>p-help</code> to get help.
+   This will <b>list all available commands</b>, and their Debian equivalent.
+   You can also type <code>p- + Tab + Tab</code> to display all possible commands.
+   With most keyboard layouts it is very quick to type because <code>p</code> and<code>-</code> are two keys very close to each other.
+</p>
+<pre><code
+><b><em>p-h</em></b> <i>Tab --> <code>p-help</code> Enter</i>
+  The 'p-' package manager
+
+  p-command                deb command                 min args
+  -------------            ---------------             ------------
+  p-status                 dpkg --status               + package name
+  p-listfiles              dpkg --listfiles            + package name
+...
+
+<b><em>p-</em></b> <i>Tab Tab</i>
+p-clean-cache          p-remove               p-update
+p-help                 p-search               p-upgrade
+p-install              p-src-build-package    p-version
+...
+</code></pre>
+<!--
+<i>To enter p- commands </i>
+<b>p-<em>i</em> <i>Tab --&gt; <code>p-install</code></i>
+  p-install <em>my-package</em> <i>Enter</i></b> 
+<i>(installing my-package...)</i>-->
+<p>If you are familiar with UNIX systems and the Debain packaging system, 
+  this should be enough for you to use <q class="p">p-</q>. 
+  The next sections detail the various commands.</p>
+
+
+<h2 class="ol">Querying installed packages</h2>
+
+<p>Which package installed this file?
+   Do I have version 2 of this package?
+   What files have been installed by this package?
+   Is this package installed?
+   What are its dependencies?
+   etc.
+  </p>
+
+<table id="igke">
+<style>table#igke tr td:last-child {font-style: italic;}</style>
+<tr> <th>p- command</th> <th>Argument</th> <th>Action</th> </tr>
+<tr> <td>p-owning-file </td> <td>file    </td> <td>which package installed this file         </td> </tr>
+<tr> <td>p-list-files  </td> <td>package </td> <td>list the files installed by the package   </td> </tr>
+<tr> <td>p-version     </td> <td>package </td> <td>returns the version number of the package </td> </tr>
+<tr> <td>p-status      </td> <td>package </td> <td>returns the full status of the package    </td> </tr>
+<!--<tr> <td>p- </td> <td>  </td> <td>  </td>     </tr>-->
+</table>
+
+<pre><code
+><b><em>p-owning-file</em> /usr/bin/hello</b>              <i>Which package owns bin/hello?</i>
+hello: /usr/bin/hello
+<b><em>p-list-files</em> hello</b>                       <i>What other files it installed?</i>
+/.
+/usr
+/usr/bin
+/usr/bin/hello
+/usr/share
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/hello.1.gz
+...
+<b><em>p-list-files</em> hello <em>| grep</em> NEWS <em>| xargs less</em></b>          <i>Show me the NEWS</i>
+...
+<b><em>p-version</em> hello</b>                                   <i>What is its version?</i>
+Version: 2.8-3
+<b><em>p-status</em> hello</b>                                        <i>Complete status</i>
+Package: hello
+Status: install ok installed
+Priority: optional
+...
+<b><em>p-status</em> hello <em>| grep</em> Maintainer:</b>               <i>Who is the maintainer?</i>
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Santiago Vila &lt;sanvila@debian.org>
+</code></pre>
+
+
+
+<h2 class="ol">Installing packages</h2>
+
+<table id="sdgj">
+<style>table#sdgj tr td:last-child {font-style: italic;}</style>
+<tr> <th>p- command</th> <th>Argument</th> <th>Action</th> </tr>
+<tr> <td>p-search             </td> <td>keywords     </td> <td>search exact package name. By default, this is the same as 'p-search-name', but you can use advanced options with it.</td> </tr>
+<tr> <td>p-search-name        </td> <td>keywords     </td> <td>search exact package name, containing 'keywords' in his name</td> </tr>
+<tr> <td nowrap>p-search-description </td> <td>keywords  </td> <td>search exact package name, containing 'keywords' in his description</td> </tr>
+<tr> <td>               </td> <td>                  </td> <td>                                    </td> </tr>
+<tr> <td>p-install      </td> <td> package list     </td> <td>install the named paclages          </td> </tr>
+<tr> <td>p-install-deb  </td> <td> deb package list </td> <td>install the debian packages (.deb)  </td> </tr>
+<tr> <td>               </td> <td>                  </td> <td>                                    </td> </tr>
+<tr> <td>p-update       </td> <td> (no arg)         </td> <td>update the package database         </td> </tr>
+<tr> <td>p-upgrade      </td> <td> (no arg)         </td> <td>upgrade all installed packages to the latest release</td> </tr>
+<tr> <td>p-add-ppa      </td> <td nowrap> ppa:&lt;ppa name></td> <td>add a new source of packages (ppa)  </td> </tr>
+<!--<tr> <td>p- </td> <td>  </td> <td>  </td>     </tr>-->
+</table>
+
+<p>To install a package we need its exact name. If we do not know it, we can search for it:</p>
+
+<pre><code
+><i>We search for packages containing 'hello' in their name:</i>
+<b><em>p-search</em> hello</b>
+p  gpe-ot<em>hello</em>             - othello board game for GPE              
+i  <em>hello</em>                   - The classic greeting, and a good example
+p  <em>hello</em>-debhelper         - The classic greeting, and a good example
+p  ruby-mixlib-s<em>hello</em>ut    - mixin library for subprocess management
+<i>'i' indicates that the package is installed.</i>
+<i>'p' indicates that the package is purged (not installed).</i>
+</code></pre>
+
+<p>But sometimes the p-search commands return a lot of results. You can grep the output to narrow the search. Let's say, for example, that we want to install the <code>text-based</code> <code>mail</code> client that we had at the university, but we can't remember at all its name. We will search for keywords in its description:</p>
+
+<pre><code
+><i>We search for packages containing 'mail' in their description,
+and we count the output's number of lines:</i>
+<b><em>p-search-description mail</em>  | wc -l </b>
+1392
+<i>This is a lot. Let's grep for those lines mentionning 'text-based':</i>
+<b>p-search-description mail <em>| grep text-based</em>  | wc -l</b>
+2
+<i>OK, now this is very interresting, let's look at these 2 results:</i>
+<b><em>p-search-description mail | grep text-based</em></b>
+p  mutt              - text-based mailreader supporting MIME, GPG
+p  python-cheetah    - text-based template engine and Python code
+<i>Yes! Now we remember, it was mutt!</i>
+
+<i>We install it immediately</i>
+<b><em>p-install</em> mutt</b>
+...
+</code></pre>
+
+<p>Now we just revealed the install command, <code>p-install</code>.
+  There is actually another one, <code>p-install-deb</code>.
+  The first one deals with packages on remote repositories.
+  The second one deals with local packages, which are '.deb' files.
+  Let's look at them: </p>
+<pre><code
+><b><em>p-install</em> mutt</b>                        <i> --> will install remote packages,</i>
+...                                      <i>the argument is the <em>package name</em>.</i>
+<b><em>p-install-deb</em> mutt-1.5.21<em>.deb</em></b>         <i> --> will install a local package,</i>
+...                                           <i>the argument is <em>a .deb file</em>.</i>
+</code></pre>
+
+<p>The three following commands deal with package repositories.
+   When a repository is updated,
+   for example when new packages are added or upgraded,
+   you should update your system accordingly.
+   This is the <code>p-update</code> command.
+   After you updated your system,
+   if some of your installed packages were upgraded in the repository, 
+   you may want to upgrade them on your system.
+   This is the <code>p-upgrade</code> command.
+   Finally you may be given a reference to a new repository (of type PPA),
+   to add it to your system, you use the <code>p-add-ppa</code> command.
+ </p>
+
+<pre><code
+><b><em>p-update</em></b>
+... <i>throwing lot of lines...</i>
+...
+Fetched 326 kB in 6s (49,7 kB/s)
+Current status: 31 updates [+16], 2395 new [+8].
+<b><em>p-upgrade</em></b>
+Resolving dependencies...
+The following NEW packages will be installed:
+  libhello-1.0-0{a} ...
+The following packages will be upgraded:
+  hello mutt ...
+
+7 packages upgraded, 3 newly installed.
+Need to get 31,2 MB of archives. After unpacking 58 MB will be used.
+Do you want to continue? [Y/n/?] 
+<i>type 'Y' to proceed,
+this will upgrade your installed packages and install new ones,
+and eventually remove obsolete ones.</i>
+</code></pre>
+
+<p>Now, if we want a package, for example <code>super-package</code>, 
+   that is in a new repository (PPA), for example <code>ppa:super-ppa</code></p>
+
+<pre><code
+><b><em>p-add-ppa</em> ppa:super-ppa</b>                                <i>We add the ppa</i>
+...
+<b><em>p-update</em></b>                                          <i>We update our system</i>
+...
+<b><em>p-install</em> super-package</b>                         <i>We install the package</i>
+...
+</code></pre>
+
+
+
+
+
+
+<h2 class="ol">Cleaning up</h2>
+<p>This section is about cleaning up your system from unneeded files, or packages.
+   There are three things that you can remove:
+   packages,
+   the package download cache,
+   and unused locale files.
+</p>
+<p>
+   We remove packages with <code>p-remove</code>. 
+   When we install or upgrade packages, the sytem keeps the downloaded packages.
+   This may take a large space our your disk. 
+   We clean the cache with <code>p-clean-cache</code>.
+</p>
+
+<pre><code
+><b><em>p-remove</em> hello</b>                       <i>Removes package 'hello'</i>
+<b><em>p-cache-size</em></b>                         <i>Gives the current size of the cache</i>
+107M  /var/cache/apt/archives/
+<b><em>p-cache-clean</em></b>                        <i>Will empty the cache.</i>
+</code></pre>
+
+<p>
+   Finally the packaging system installs locale files
+   (mostly translations of interface and documentation into various languages)
+   for all available locales (50+ languages).
+   On personal computer you rarely use more than a few languages.
+   So the locale files for all other locales can be safely removed.
+   This is done with <code>p-locale-purge</code>.
+   Normally ....
+</p>
+
+<pre><code
+><b><em>p-locale-purge</em></b>
+
+config !!!
+automatic vs manual
+
+
+</code></pre>
+
+
+
+
+<h2 class="ol">Advanced usage</h2>
+
+
+<h3 class="ol">Rebuilding packages</h3>
+<p>
+
+</p>
+
+<h3 class="ol">Advanced arguments</h3>
+<p>
+Features not included in p-
+  - use parent tool options/parameters/arguments
+  - documentation
+    - dpkg/apt-get/etc. --help
+    - man dpkg/apt-get/etc.
+    - online doc
+</p>
+
+<h3 class="ol">Extending <q class="p">p-</q> locally</h3>
+<p>
+  - extend p- locally, add aliases
+    feel free to share your own common commands and propose for inclusion
+</p>
+
+
+<!--                    -o-                       -->
+<center>
+<p style="font-size: 250%; margin-top: 4ex;"><q class="p">p-</q></p>
+<p style="font-style: italic">a simple package manager</p>
+</center>
+<!--                    -o-                       -->
+</section>
+
+
+
+
+
+<section><h1>Project</h1>
+
+<h3><q class="p">p-</q> is Free Software</h3>
+
+<p>
+  <q class="p">p-</q> is Free Software.
+  It is protected by copyright laws and distributed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html"><b>GNU GPL2</b></a> license. 
+  It means that everybody is free to use it, free to study it,
+  free to modify it, and free to redistribute.
+  This is <b>with one condition</b>: if you redistribute it,
+  you must do it under the same conditions (GPL2),
+  and grant the same freedom to everybody.
+</p>
+<p>
+  <q class="p">p-</q> is distributed for free with the hope that it is useful to others.
+</p>
+
+<h3>Motivation</h3>
+
+<p>I have been using Debian and Ubuntu for years with <b>a lot of satisfaction</b>.
+   Their packaging system and package database have been highly stable 
+   and usualy included all the packages I have ever wished.
+
+  However I have always been <b>a little bit annoyed</b> by
+  the variety of tools we have to use and their different synopsis.
+
+  The other day I finally took the time to write <b>a few aliases</b>
+  for the command I used the most.
+
+  Then I wrote a UNIX pipe of commands to <b>self document the commands</b>
+  (it greps the alias file for the packaging management commands and print these lines).
+
+  Finally I put all these commands in a separate file.
+  So it could be <b>shared with friends</b>.
+</p>
+
+<p>In the end, I thought, why not <b>sharing it with the world</b>?
+   Github makes it <b>trivial to set up a public project</b> for free.
+   It takes a few clicks to set up a public code repository, 
+   and no more to set up a project web page.
+</p>
+
+<p><b>Et voilà !</b></p>
+
+<h3>Contribution</h3>
+<p>Feedback and contributions are <b>warmly welcome!</b></p>
+<p>Feel free to <b>share your own aliases</b>,
+   and ask for inclusion in <q class="p">p-</q> if it makes sense.
+   Use the <a href="https://github.com/oluc/p-/issues">issue tracker</a> for bugs, ideas, and feedback.
+   <a href="https://github.com/oluc/p-">Fork</a> the project,
+   and send <a href="https://github.com/oluc/p-/pulls">pull requests</a>.
+</p>
+
+<dl id="lsdh">
+<style>#lsdh {margin-top: 2ex;} #lsdh dt {width: 160px;} #lsdh dd {margin-left: 160px;}</style>
+<dt>Bugs, ideas, feedback</dt> 
+   <dd>goes to the <a href="https://github.com/oluc/p-/issues">issue tracker</a> at github</dd>
+<dt>Source code</dt> 
+   <dd>is in the <a href="https://github.com/oluc/p-">source code repository</a> at github</dd>
+</dl>
+
+<p><b>Known bugs</b></p>
+<ol>
+<li>bash completion does not work</li>
+<li>make a debian package!!!</li>
+</ol>
+
+
+<h3>Credits</h3>
+<ul>
+  <li>to <a href="http://www.debian.org">the Debian project</a>,
+      for its highly reliable packaging system and package database.
+  </li>
+  <li>to <a href="http://www.github.com">github</a>,
+      to make it trivial to set up FLOSS projects.
+  </li>
+</ul>
+
+
+<!--                    -o-                       -->
+<center>
+<p style="font-size: 250%; margin-top: 4ex;"><q class="p">p-</q></p>
+<p style="font-style: italic">a simple package manager</p>
+</center>
+<!--                    -o-                       -->
+</section>
+
+
+
 
       <footer>
         <p>Project maintained by <a href="https://github.com/oluc">oluc</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+        <p><small>Hosted on GitHub Pages <br/> 
+                  Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a>
+        </small></p>
       </footer>
-
-
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
   </body>
 </html>
