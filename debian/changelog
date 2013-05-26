@@ -1,3 +1,13 @@
+p- (0.2) UNRELEASED; urgency=low
+
+  * fix: p-install-deb requires sudo
+  * new: p-search uses apt-cache (instead of aptitude)
+  * fix: substitute the p-help PATH at installation time (Makefile)
+  * new: added p- version number in p-help output
+  * fix: proper permission rights on p-package-manager.sh (rw-r--r--) 
+
+ -- Luc Pionchon <pionchon.luc@gmail.com>  Sun, 26 May 2013 16:51:36 +0300
+
 p- (0.1) unstable; urgency=low
 
   * Initial Release.

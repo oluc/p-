@@ -1,31 +1,31 @@
 #
-#               The 'p-' package manager
+#                 The 'p-' package manager
 #
 #
-#     /a simple package manager for Debian based systems/
+#    /a simple package manager for Debian based systems/
 #
 #
 #
-# Copyright © 2013 — Luc Pionchon <pionchon.luc@gmail.com>
-#
-# p- is distributed under the GNU GPL2 license
+#  Copyright © 2013 — Luc Pionchon <pionchon.luc@gmail.com>
 # 
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to: 
-#      Free Software Foundation, Inc., 
-#      51 Franklin Street, Fifth Floor, 
-#      Boston, MA  02110-1301, 
-#      USA
+#  p- is distributed under the GNU GPL2 license
+#  
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to:
+#       Free Software Foundation, Inc.,
+#       51 Franklin Street, Fifth Floor,
+#       Boston, MA  02110-1301,
+#       USA
 #
 #===============================================================================
 #
@@ -44,6 +44,7 @@
 #                                                                      #@p-help@
 #      The 'p-' package manager                                        #@p-help@
 #      ------------------------                                        #@p-help@
+#      version 0.2                                                     #@p-help@
 #                                                                      #@p-xxx-help@
 #   p- is a wrapper to Debian package management.                      #@p-xxx-help@
 #   p- unifies calls to dpkg, aptitude, apt-get, etc.                  #@p-xxx-help@
@@ -73,10 +74,6 @@ alias p-help='grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   grep --inver
 # sed removes all '="'
 # sed removes all remaining '"'
 
-
-## FIXME: search, use apt-cache search, != aptitude search
-## FIXME: _p- function names, use inside command 
-
 _p-version () { dpkg --status $1 | grep "Version:"; }
 _p-search-description () { aptitude search "?description($1)"; }
 #                                                                      #@p-help@
@@ -90,14 +87,13 @@ alias p-version="_p-version"                        ## + package name  #@p-help@
 alias p-owning-file="dpkg -S"                       ## + filename      #@p-help@
 #                                                                      #@p-help@
 #---- Search for remote packages:                                      #@p-help@
-alias p-search="aptitude search"                    ## + keywords      #@p-help@
+alias p-search="apt-cache search"                   ## + keywords      #@p-help@
 alias p-search-name="aptitude search"               ## + keywords      #@p-help@
 alias p-search-description="_p-search-description"  ## + keywords      #@p-help@
-
 #                                                                      #@p-help@
 #---- Install packages, remote or local:                               #@p-help@
 alias p-install="sudo aptitude install"             ## + package list  #@p-help@
-alias p-install-deb="dpkg --install"                ## + .deb package  #@p-help@
+alias p-install-deb="sudo dpkg --install"           ## + .deb package  #@p-help@
 alias p-update="sudo aptitude update"               ## (no arg)        #@p-help@
 alias p-upgrade="sudo aptitude upgrade"             ## (no arg)        #@p-help@
 alias p-add-ppa="sudo apt-add-repository"           ## ppa:<ppa/name>  #@p-help@
