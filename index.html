@@ -39,7 +39,7 @@
         <div class="downloads">
           <span>Downloads:</span>
           <ul>
-            <!-- <li><a href="https://github.com/oluc/p-/blob/debian-packages-archive/p-_0.1_all.deb?raw=true" class="button">.deb</a></li> -->
+            <li><a href="https://github.com/oluc/p-/blob/debian-packages-archive/p-_0.2_all.deb?raw=true" class="button">.deb</a></li>
             <li><a href="https://github.com/oluc/p-/zipball/master" class="button">ZIP</a></li>
             <li><a href="https://github.com/oluc/p-/tarball/master" class="button">TAR</a></li>
           </ul>
@@ -144,54 +144,33 @@ Synonym: <b>plainness</b>
 
 <section><h1>Installation</h1>
 
-<p>OK, <b>you absolutely must install this</b>. <br/>
-  Two steps, install the dependencies, 
-  then install <q class="p">p-</q> itself.</p>
-
-<h3>1. Dependencies</h3>
-<p><q class="p">p-</q> depends on</p>
-<dl id="srdg">
-<style>#srdg dt {       width: 160px; } #srdg dd { margin-left: 160px; }</style>
-<dt>Basic debian tools   </dt> <dd><b>dpkg, apt-get, aptitude</b></dd>
-<dt>Advanced debian tools</dt> <dd><b>dch, dpkg-source, dpkg-buildpackage</b></dd>
-<dt>Dirty Debian hack    </dt> <dd><b>locale-purge</b></dd>
-<dt>Standard Linux tools </dt> <dd><b>bash, grep, sed, column, less</b></dd>
-</dl>
-
-<p>
-Most of them should be <b>already installed</b> on your Debian based system. 
-Install the potentially missing packages. For example:
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<pre><code><b>sudo apt-get install aptitude locale-purge</b>
-<b>sudo apt-get install dch dpkg-source dpkg-buildpackage</b>
-</code></pre>
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-This is the last time you will use <code>apt-get</code> for such simple task. 
+<p>OK, <b>you absolutely must install this</b>.
+   It's simple: grab the
+   <a href="https://github.com/oluc/p-/blob/debian-packages-archive/p-_0.2_all.deb?raw=true"><q class="p">p-</q> debian package</a>,
+   install it, and eventually install missing dependencies.
 </p>
 
-<h3>2. Installing <q class="p">p-</q></h3>
+<pre><code
+><b>wget <small style="font-size: 80%">https://github.com/oluc/p-/blob/debian-packages-archive/p-_0.2_all.deb?raw=true</small> \
+       -O p-_0.2_all.deb</b>
+<b><em>sudo dpkg --install p-_0.2_all.deb</em></b>
 
-<ol>
-<li>Download the <q class="p">p-</q> package</li>
-<li>Save p-package-manager.sh into your <code>~/.bash.d/</code></li>
-<li><code>source</code> it, or add it to your <code>.bashrc</code></li>
-</ol>
+<i>If there are missing dependencies, dpkg will throw an error, like:</i>
+dpkg: dependency problems prevent configuration of p-:
+ p- depends on localepurge; however:
+  Package <em>localepurge is not installed</em>.
 
-<pre><code><b>wget https://github.com/oluc/p-/tarball/master -O oluc-p-.tgz</b>
-<b>tar zxf oluc-p-.tgz</b>                          <i>Download and uncompress</i>
-<b>cd oluc-p-*</b>                                  <i>Go into the new directory</i>
-<b>cp p-package-manager.sh <em>~/.bash.d/</em></b>           <i>Install the script</i>
-<b>cat <em>>></em> ~/.bashrc                             <i>Append to .bashrc</i>
-if [ -f ~/.bash.d/p-package-manager.sh ]; then
-      <em>.</em> ~/.bash.d/p-package-manager.sh         <i>The dot is important!</i>
-fi                                             <i>Copy until here</i>
-<i><em>^D</em></i>                                             <i>Press <code>Ctrl-D</code></i>
-</b>                               <i>NOTE: you can copy/paste these commands,
-                                   the comments should be skipped automatically.</i>
+<i>Just install the missing dependencies and apt will finish <q class="p">p-</q> installation:</i>
+<b>sudo apt-get install localepurge</b>
+
+<i>Now <q class="p">p-</q> is installed and will be active on any new login shell.</i>
+<i>If however you want to use it in your current shell, just run:</i>
+<b>source /etc/profile.d/p-package-manager.sh</b>
+
 <i>That's it.</i>
 </code></pre>
 
-<p>That's it. You can run <code>p-help</code> to start with.</p>
+<p>You can now run <code>p-help</code> to start with.</p>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <pre><code><b><em>p-help</em></b>
