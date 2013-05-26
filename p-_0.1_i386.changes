@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sat, 25 May 2013 19:14:19 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.1
+Distribution: unstable
+Urgency: low
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon <pionchon.luc@gmail.com>
+Description: 
+ p-         - a simple package manager for Debian based systems.
+Changes: 
+ p- (0.1) unstable; urgency=low
+ .
+   * Initial Release.
+Checksums-Sha1: 
+ b6c45f12b6b68e7892cd6acc7a000301b5125262 577 p-_0.1.dsc
+ eb92988b28644b876745dc353d05a824ab0b281c 10227 p-_0.1.tar.gz
+ 8580339b55c44f6e1237c21710aefa1e536ed33f 4034 p-_0.1_all.deb
+Checksums-Sha256: 
+ c5aea592e56c24f40a1add48c383dbcd94d1fcb006a6008de510dd73e90808ea 577 p-_0.1.dsc
+ 5433682128030663fcdc9ab0801e3746c88122ab351b8a973af8e535ecbc56cd 10227 p-_0.1.tar.gz
+ 8a8f232e18c8d9c254a21b7525116439fba43d0b477424f8ee98bbc2b62ac847 4034 p-_0.1_all.deb
+Files: 
+ eda1537f0710e416a4fefc1fac187bbf 577 admin extra p-_0.1.dsc
+ 43f251d1f92ad6e45c85f302006db9f5 10227 admin extra p-_0.1.tar.gz
+ 3819d99c38ece0ed84fbff667da57b26 4034 admin extra p-_0.1_all.deb
