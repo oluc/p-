@@ -16,6 +16,9 @@ header p {
   margin-bottom : -1.3ex !important;
 }
 
+/* Buttons */
+a.button { outline: none;}
+
 /* Navigation column */
 nav li.tag-h1        a { font-weight: bold; outline: none;}
 nav li.tag-h1.active a { color: #C55;}
