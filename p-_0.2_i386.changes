@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Sun, 26 May 2013 16:51:36 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.2
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon <pionchon.luc@gmail.com>
+Description: 
+ p-         - a simple package manager for Debian based systems.
+Changes: 
+ p- (0.2) UNRELEASED; urgency=low
+ .
+   * fix: p-install-deb requires sudo
+   * new: p-search uses apt-cache (instead of aptitude)
+   * fix: substitute the p-help PATH at installation time (Makefile)
+   * new: added p- version number in p-help output
+   * fix: proper permission rights on p-package-manager.sh (rw-r--r--)
+Checksums-Sha1: 
+ 86b47dc803e432cf5a244bb4245049bd06011f2c 577 p-_0.2.dsc
+ a810177eae39ee89e01b61aebbce7576e80ce831 10511 p-_0.2.tar.gz
+ 131b0cddcf214a625d962a40d6b3e3eba7e70165 4304 p-_0.2_all.deb
+Checksums-Sha256: 
+ b8b460a26fc1ad57ab37c3356d12f4d22906347a747a04392b68a8749a728891 577 p-_0.2.dsc
+ d751afa8c305e876c1e3914117376401800199b3e329b6e476adce020d298232 10511 p-_0.2.tar.gz
+ 7be05bca7f5593bc882d62761b81e6561fb685065dbad2871daa24630b607390 4304 p-_0.2_all.deb
+Files: 
+ 337219af88347f4c1ae08907c17a63b1 577 admin extra p-_0.2.dsc
+ 76a38db60bb387ef1ca84f7a1ea99a41 10511 admin extra p-_0.2.tar.gz
+ 8ae604a0ace50138b8713da6d5f433a6 4304 admin extra p-_0.2_all.deb
