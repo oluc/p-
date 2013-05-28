@@ -44,7 +44,7 @@
 #                                                                      #@p-help@
 #      The 'p-' package manager                                        #@p-help@
 #      ------------------------                                        #@p-help@
-#      version 0.2                                                     #@p-help@
+#      version 0.3                                                     #@p-help@
 #                                                                      #@p-xxx-help@
 #   p- is a wrapper to Debian package management.                      #@p-xxx-help@
 #   p- unifies calls to dpkg, aptitude, apt-get, etc.                  #@p-xxx-help@
@@ -74,8 +74,8 @@ alias p-help='grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   grep --inver
 # sed removes all '="'
 # sed removes all remaining '"'
 
-_p-version () { dpkg --status $1 | grep "Version:"; }
-_p-search-description () { aptitude search "?description($1)"; }
+_p_version () { dpkg --status $1 | grep "Version:"; }
+_p_search_description () { aptitude search "?description($1)"; }
 #                                                                      #@p-help@
 #   <p-command>   =" <deb command>                  ## <min args>      #@p-help@
 #   ------------- =" ---------------                ## ------------    #@p-help@
@@ -83,13 +83,13 @@ _p-search-description () { aptitude search "?description($1)"; }
 #---- Query installed packages:                                        #@p-help@
 alias p-status="dpkg --status"                      ## + package name  #@p-help@
 alias p-list-files="dpkg --listfiles"               ## + package name  #@p-help@
-alias p-version="_p-version"                        ## + package name  #@p-help@
+alias p-version="_p_version"                        ## + package name  #@p-help@
 alias p-owning-file="dpkg -S"                       ## + filename      #@p-help@
 #                                                                      #@p-help@
 #---- Search for remote packages:                                      #@p-help@
 alias p-search="apt-cache search"                   ## + keywords      #@p-help@
 alias p-search-name="aptitude search"               ## + keywords      #@p-help@
-alias p-search-description="_p-search-description"  ## + keywords      #@p-help@
+alias p-search-description="_p_search_description"  ## + keywords      #@p-help@
 #                                                                      #@p-help@
 #---- Install packages, remote or local:                               #@p-help@
 alias p-install="sudo aptitude install"             ## + package list  #@p-help@
