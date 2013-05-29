@@ -3,14 +3,15 @@ Section: admin
 Priority: extra
 Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 0.1
+Standards-Version: 3.9.4.0
 Homepage: http://oluc.github.io/p-
 Vcs-Git: git://github.com/oluc/p-.git
 Vcs-Browser: https://github.com/oluc/p-
 
 Package: p-
 Architecture: all
-Depends: dpkg, apt, aptitude, devscripts, dpkg-dev, localepurge, bash, grep, sed, bsdmainutils, less, sudo
+Depends: dpkg, apt, aptitude, devscripts, dpkg-dev, bash, grep, sed, bsdmainutils, less, sudo
+Recommends: localepurge
 Description: a simple package manager for Debian based systems.
  p- is a simple package manager for Debian based system, like Debian
  and Ubuntu. Technically it is just a wrapper to debian packaging
