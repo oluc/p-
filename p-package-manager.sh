@@ -62,7 +62,7 @@
 # FIXME : why bash completion does not work?                           #@p-xxx-help@
 # 
 
-alias p-help='grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   grep --invert-match "alias p-help="   |   sed -e "s/#@p-help@//; s/^alias /   /; s/^#---- //; s/^#//; s/ *$//; s/=\"/##/; s/\"//;"   |   column -s "##" -t -e   |   less --no-init --quit-if-one-screen   '    ##############
+alias p-help='\grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   \grep --invert-match "alias p-help="   |   \sed -e "s/#@p-help@//; s/^alias /   /; s/^#---- //; s/^#//; s/ *$//; s/=\"/##/; s/\"//;"   |   \column -s "##" -t -e   |   \less --no-init --quit-if-one-screen   '    ##############
 #---- What the pipeline does:
 # grep all #+@p-help@ tagged lines in this file
 # grep except this 'p-help' line
