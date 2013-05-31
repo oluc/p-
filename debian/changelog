@@ -1,9 +1,10 @@
-p- (0.4) UNRELEASED; urgency=low
+p- (0.4) unstable; urgency=high
 
   * deb: only "recommends" localepurge
   * fix: escape grep/sed/column/less from possible alias.
+  * fix: don't put the DESTDIR inside p-help grep.
 
- -- Luc Pionchon <pionchon.luc@gmail.com>  Thu, 30 May 2013 21:08:58 +0300
+ -- Luc Pionchon <pionchon.luc@gmail.com>  Fri, 31 May 2013 06:56:37 +0300
 
 p- (0.3) unstable; urgency=high
 
