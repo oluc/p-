@@ -8,7 +8,7 @@ default:
 DEST=etc/profile.d
 install:
 	install --mode=a+r,a-wx,u+w p-package-manager.sh $(DESTDIR)/$(DEST)
-	sed -i -e "s@grep \"#\@p-help\@\" ~/.bash.d@grep \"#\@p-help\@\" $(DESTDIR)/$(DEST)@" $(DESTDIR)/$(DEST)/p-package-manager.sh
-	@#          @                              @                                      @
-	@#           grep \"#\@p-help\@\"           grep \"#\@p-help\@\"                  .
-	@#                                ~/.bash.d                      $(DESTDIR)/$(DEST).
+	sed -i -e "s@grep \"#\@p-help\@\" ~/.bash.d@grep \"#\@p-help\@\" /$(DEST)@" $(DESTDIR)/$(DEST)/p-package-manager.sh
+	@#          @                              @                             @
+	@#           grep \"#\@p-help\@\"           grep \"#\@p-help\@\"         .
+	@#                                ~/.bash.d                      /$(DEST).
