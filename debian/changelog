@@ -1,8 +1,9 @@
 p- (0.4) UNRELEASED; urgency=low
 
-  * deb: only "recommands" localepurge
+  * deb: only "recommends" localepurge
+  * fix: escape grep/sed/column/less from possible alias.
 
- -- Luc Pionchon (toto) <toto@luc-MacBook>  Wed, 29 May 2013 05:39:10 +0300
+ -- Luc Pionchon <pionchon.luc@gmail.com>  Thu, 30 May 2013 21:08:58 +0300
 
 p- (0.3) unstable; urgency=high
 
