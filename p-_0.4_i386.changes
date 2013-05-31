@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Fri, 31 May 2013 06:56:37 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.4
+Distribution: unstable
+Urgency: high
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon <pionchon.luc@gmail.com>
+Description: 
+ p-         - a simple package manager for Debian based systems.
+Changes: 
+ p- (0.4) unstable; urgency=high
+ .
+   * deb: only "recommends" localepurge
+   * fix: escape grep/sed/column/less from possible alias.
+   * fix: don't put the DESTDIR inside p-help grep.
+Checksums-Sha1: 
+ 75a86e63a20ad688cf206866b75ee9112233778e 581 p-_0.4.dsc
+ b67b82c6ec532b7837ff0cf464906c089d792e1e 10639 p-_0.4.tar.gz
+ 8b552e38f14b92c2252bd7bb44d988811cd98dcf 4452 p-_0.4_all.deb
+Checksums-Sha256: 
+ 18a1570b3a876052060cf4b1dae0f3c143fabed355163a819af5576835dbe78c 581 p-_0.4.dsc
+ b594e629ece74c900f8d48199b1c3cbd9a76d45f75e52ffe2f98dd99a3c03600 10639 p-_0.4.tar.gz
+ 283cacd5199bcee6e9a5e745a62395c982dda81d6b08f84b285837456d078ad4 4452 p-_0.4_all.deb
+Files: 
+ 34f3d146e45bba885c57f14d34562214 581 admin extra p-_0.4.dsc
+ 503db9b884e176eb33a9a6212e981d91 10639 admin extra p-_0.4.tar.gz
+ 7d6038fdd3f2c5b27938d410bd692879 4452 admin extra p-_0.4_all.deb
