@@ -74,7 +74,7 @@ alias p-help='\grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   \grep --inv
 # sed removes all '="'
 # sed removes all remaining '"'
 
-_p_version () { dpkg --status $1 | grep "Version:"; }
+_p_version () { dpkg --status $1 | \grep "Version:"; }
 _p_search_description () { aptitude search "?description($1)"; }
 #                                                                      #@p-help@
 #   <p-command>   =" <deb command>                  ## <min args>      #@p-help@
