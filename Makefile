@@ -21,7 +21,7 @@ dist:
 	@echo && echo done.
 
 deb-package:
-	@echo $(PWD) |grep ".dist" || echo "Run 'make dist' first. Then cd .dist/p-_??/"; false
+	###@echo $(PWD) |grep ".dist" || echo "Run 'make dist' first. Then cd .dist/p-_??/"; false
 	dpkg-buildpackage
 
 
@@ -29,8 +29,9 @@ deb-package:
 #
 # NOTE: Debian packaging tools will set DESTDIR.
 
-DEST=etc/profile.d
+DEST=etc/bash_completion.d
 install:
+	@install -d $(DESTDIR)/$(DEST)
 	@install --mode=a+r,a-wx,u+w p-package-manager.sh $(DESTDIR)/$(DEST)
 	@sed -i -e "s@grep \"#\@p-help\@\" ~/.bash.d@grep \"#\@p-help\@\" /$(DEST)@" $(DESTDIR)/$(DEST)/p-package-manager.sh
 	@#           @                              @                             @

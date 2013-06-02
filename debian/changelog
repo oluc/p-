@@ -1,8 +1,16 @@
-p- (0.5) UNRELEASED; urgency=low
+p- (0.5) UNRELEASED; urgency=high
 
   * new: Makefile, add 'dist:' and 'deb-package' targets to ease pkg creation.
+  * new: Makefile, install p-package-manager.sh in /etc/bash_completion.d
+         so p- actually work in interactive shells --> urgency=high
 
- -- Luc Pionchon (toto) <toto@luc-MacBook>  Sun, 02 Jun 2013 11:37:18 +0300
+         NOTE: this is a hack, it is the only place I found that interactive shells source.
+         I asked here:
+         - http://unix.stackexchange.com/questions/77746                       (Q, stackexchange)
+         - https://answers.launchpad.net/ubuntu/+source/bash/+question/229895  (Q, ubuntu)
+         - https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1186284         (bug report, ubuntu, bash)
+
+ -- Luc Pionchon <pionchon.luc@gmail.com>  Sun, 02 Jun 2013 11:37:18 +0300
 
 p- (0.4) unstable; urgency=high
 
