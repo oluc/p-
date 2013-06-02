@@ -1,14 +1,20 @@
+p- (0.5) UNRELEASED; urgency=low
+
+  * new: Makefile, add 'dist:' and 'deb-package' targets to ease pkg creation.
+
+ -- Luc Pionchon (toto) <toto@luc-MacBook>  Sun, 02 Jun 2013 11:37:18 +0300
+
 p- (0.4) unstable; urgency=high
 
   * deb: only "recommends" localepurge
   * fix: escape grep/sed/column/less from possible alias.
-  * fix: don't put the DESTDIR inside p-help grep.
+  * fix: don't put the DESTDIR inside p-help grep. --> urgency=high
 
  -- Luc Pionchon <pionchon.luc@gmail.com>  Fri, 31 May 2013 06:56:37 +0300
 
 p- (0.3) unstable; urgency=high
 
-  * fix: use correct function names (no '-'); fail login!
+  * fix: use correct function names (no '-'); fail login! --> urgency=high
 
  -- Luc Pionchon <pionchon.luc@gmail.com>  Tue, 28 May 2013 18:06:49 +0300
 
