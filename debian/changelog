@@ -10,6 +10,7 @@ p- (0.5) UNRELEASED; urgency=high
          - https://answers.launchpad.net/ubuntu/+source/bash/+question/229895  (Q, ubuntu)
          - https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1186284         (bug report, ubuntu, bash)
   * fix: p-version: escape grep from possible alias.
+  * deb: updated debian/dirs with etc/bash_completion.d instead of etc/profile.d/
 
  -- Luc Pionchon <pionchon.luc@gmail.com>  Sun, 02 Jun 2013 11:37:18 +0300
 
