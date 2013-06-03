@@ -1,0 +1,38 @@
+Format: 1.8
+Date: Sun, 02 Jun 2013 20:09:25 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.5
+Distribution: unstable
+Urgency: high
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon (toto) <toto@luc-MacBook>
+Description: 
+ p-         - a simple package manager for Debian based systems.
+Changes: 
+ p- (0.5) unstable; urgency=high
+ .
+   * new: Makefile, add 'dist:' and 'deb-package' targets to ease pkg creation.
+   * new: Makefile, install p-package-manager.sh in /etc/bash_completion.d
+          so p- actually work in interactive shells --> urgency=high
+ .
+          NOTE: this is a hack, it is the only place I found that interactive shells source.
+          I asked here:
+          - http://unix.stackexchange.com/questions/77746                       (Q, stackexchange)
+          - https://answers.launchpad.net/ubuntu/+source/bash/+question/229895  (Q, ubuntu)
+          - https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1186284         (bug report, ubuntu, bash)
+   * fix: p-version: escape grep from possible alias.
+   * deb: updated debian/dirs with etc/bash_completion.d instead of etc/profile.d/
+Checksums-Sha1: 
+ a823792098aea147c6a2df9481bdcf5a4809db63 572 p-_0.5.dsc
+ 3b71ad746552ff1a9d814c4af9213d462aee9ff8 11131 p-_0.5.tar.gz
+ 1548f8c4792399b46ccfe2fd2d5aed98d27f98a3 4876 p-_0.5_all.deb
+Checksums-Sha256: 
+ 9fc9479f040676d97608254c3e055dcbbcd908a1a76fd331d0af1f9d320db6c2 572 p-_0.5.dsc
+ 92e1367614ece02a57cfcb151e902ae477f2a5a929bd6f139b62eebd9eae7995 11131 p-_0.5.tar.gz
+ b1bb2f8adacf7405ae8d1c063d0955b13bd2efd1bf5790fcb083d9ae457fbf6f 4876 p-_0.5_all.deb
+Files: 
+ 7292529ec68f53ea84ea7a22ad08f190 572 admin extra p-_0.5.dsc
+ 145a396541c4fc3a38f9f163cd785c5d 11131 admin extra p-_0.5.tar.gz
+ 82e1cdd515a312ec2f29e4aa9e8fa761 4876 admin extra p-_0.5_all.deb
