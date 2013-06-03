@@ -1,4 +1,4 @@
-p- (0.5) UNRELEASED; urgency=high
+p- (0.5) unstable; urgency=high
 
   * new: Makefile, add 'dist:' and 'deb-package' targets to ease pkg creation.
   * new: Makefile, install p-package-manager.sh in /etc/bash_completion.d
@@ -9,8 +9,8 @@ p- (0.5) UNRELEASED; urgency=high
          - http://unix.stackexchange.com/questions/77746                       (Q, stackexchange)
          - https://answers.launchpad.net/ubuntu/+source/bash/+question/229895  (Q, ubuntu)
          - https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1186284         (bug report, ubuntu, bash)
-  * fix: p-version: escape grep from possible alias.
   * deb: updated debian/dirs with etc/bash_completion.d instead of etc/profile.d/
+  * fix: p-version: escape grep from possible alias.
 
  -- Luc Pionchon <pionchon.luc@gmail.com>  Sun, 02 Jun 2013 11:37:18 +0300
 
