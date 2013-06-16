@@ -1,8 +1,9 @@
 p- (0.6) unstable; urgency=low
 
   * new: bash completion for package names
+  * fix: locale-purge bin is named localepurge (no dash)
 
- -- Luc Pionchon (toto) <toto@luc-MacBook>  Sun, 16 Jun 2013 09:09:29 +0300
+ -- Luc Pionchon <>onchon.luc@gmail.comk  Sun, 16 Jun 2013 09:09:29 +0300
 
 p- (0.5) unstable; urgency=high
 
