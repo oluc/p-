@@ -55,8 +55,8 @@
 
 alias p-help='\grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   \grep --invert-match "alias p-help="   |   \sed -e "s/#@p-help@//; s/^alias /   /; s/^#---- //; s/^#//; s/ *$//; s/=\"/##/; s/\"//;"   |   \column -s "##" -t -e   |   \less --no-init --quit-if-one-screen   '    ##############
 #---- What the pipeline does:
-#  grep all #@p-help@ tagged lines in this file
-#       except this 'p-help' line
+# grep all #+@+p-help+@ tagged lines in this file
+#      except this 'p-help' line
 #  sed removes #+@p-help@ tags
 #      replaces all 'alias ' by small indentation
 #      removes all '#---- ' to left align headings
@@ -91,7 +91,7 @@ alias p-add-ppa="sudo apt-add-repository"           ## ppa:<ppa/name>  #@p-help@
 #                                                                      #@p-help@
 #---- Remove packages, Clean up:                                       #@p-help@
 alias p-remove="sudo aptitude purge"                ## + package list  #@p-help@
-alias p-locale-purge="sudo locale-purge"            ## (no arg)        #@p-help@
+alias p-locale-purge="sudo localepurge"             ## (no arg)        #@p-help@
 alias p-cache-size="du -sh /var/cache/apt/archives" ## (no arg)        #@p-help@
 alias p-cache-clean="sudo aptitude clean"           ## (no arg)        #@p-help@
 #                                                                      #@p-help@
