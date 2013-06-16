@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Sun, 16 Jun 2013 09:09:29 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.6
+Distribution: unstable
+Urgency: low
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon <pionchon.luc@gmail.com>
+Description: 
+ p-         - a simple package manager for Debian based systems.
+Changes: 
+ p- (0.6) unstable; urgency=low
+ .
+   * new: bash completion for package names
+   * fix: locale-purge bin is named localepurge (no dash)
+Checksums-Sha1: 
+ 215fb0bfd040b9092b71cff173180440c9df35dc 572 p-_0.6.dsc
+ ba8bc2a2fb025519d5f0ba91c5ed5d7508bbe1e7 11226 p-_0.6.tar.gz
+ 96623ed70b9e6b960312312ef03cceb55181da7e 4904 p-_0.6_all.deb
+Checksums-Sha256: 
+ 982dbe1f56115e32ef19d26433e16cc35e516deefe037ffb579d6613e17a19de 572 p-_0.6.dsc
+ 401775f84238c7b62bd8c0e051a23064538077ecd697763ffe30a0cd59416f1f 11226 p-_0.6.tar.gz
+ 324bd2fa8be35ab35b789805f02ba72fdd1353604882b9b0591f0b0204fee90e 4904 p-_0.6_all.deb
+Files: 
+ 39e775b0be1c23829b16a4ade14e3ef8 572 admin extra p-_0.6.dsc
+ 20d94069a2cb0f91ae22dbf62d8e8b86 11226 admin extra p-_0.6.tar.gz
+ e720d273ea0800d1bfb2733bf56b125b 4904 admin extra p-_0.6_all.deb
