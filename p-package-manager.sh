@@ -43,7 +43,7 @@
 #                                                                      #@p-help@
 #      The 'p-' package manager                                        #@p-help@
 #      ------------------------                                        #@p-help@
-#      version 0.6                                                     #@p-help@
+#      version 0.7                                                     #@p-help@
 #                                                                      #@p-xxx-help@
 #   p- is a wrapper to Debian package management.                      #@p-xxx-help@
 #   p- unifies calls to dpkg, aptitude, apt-get, etc.                  #@p-xxx-help@
@@ -117,5 +117,3 @@ complete -F _pkg_names p-src-get-source
 complete -F _pkg_names p-src-get-build-dep
 
 
-
-echo "p- done."
