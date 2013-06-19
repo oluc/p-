@@ -43,7 +43,7 @@
 #                                                                      #@p-help@
 #      The 'p-' package manager                                        #@p-help@
 #      ------------------------                                        #@p-help@
-#      version 0.7                                                     #@p-help@
+#      version 0.8pre                                                  #@p-help@
 #                                                                      #@p-xxx-help@
 #   p- is a wrapper to Debian package management.                      #@p-xxx-help@
 #   p- unifies calls to dpkg, aptitude, apt-get, etc.                  #@p-xxx-help@
@@ -65,6 +65,7 @@ alias p-help='\grep "#@p-help@" ~/.bash.d/p-package-manager.sh   |   \grep --inv
 #      removes all '="'
 #      removes all remaining '"'
 
+_less_changelogs    () { zless /usr/share/doc/$1/changelog.*; }
 _dpkg_version       () { dpkg --status $1 | \grep "Version:"; }
 _aptit_search_descr () { aptitude search "?description($1)"; }
 #                                                                      #@p-help@
@@ -74,6 +75,7 @@ _aptit_search_descr () { aptitude search "?description($1)"; }
 #---- Query installed packages:                                        #@p-help@
 alias p-status="dpkg --status"                      ## + package name  #@p-help@
 alias p-list-files="dpkg --listfiles"               ## + package name  #@p-help@
+alias p-changelog="_less_changelogs"                ## + package name  #@p-help@
 alias p-version="_dpkg_version"                     ## + package name  #@p-help@
 alias p-owning-file="dpkg -S"                       ## + filename      #@p-help@
 #                                                                      #@p-help@
@@ -108,6 +110,7 @@ alias p-src-build-package="dpkg-buildpackage"       ## (no arg)        #@p-help@
 #
 complete -F _pkg_names p-status
 complete -F _pkg_names p-list-files
+complete -F _pkg_names p-changelog
 complete -F _pkg_names p-version
 
 complete -F _pkg_names p-install

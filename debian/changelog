@@ -1,3 +1,9 @@
+p- (0.8pre) UNRELEASED; urgency=low
+
+  * new: added p-changelog
+
+ -- Luc Pionchon <pionchon.luc@gmail.com>  Wed, 19 Jun 2013 14:45:48 +0300
+
 p- (0.7) unstable; urgency=high
 
   * fix: don't echo anything. (it is displayed by each new shell...)
