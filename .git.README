@@ -1,0 +1,4 @@
+
+git clone -b gh-pages --single-branch https://github.com/oluc/p-.git gh-pages.git
+
+
