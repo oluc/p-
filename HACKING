@@ -1,0 +1,78 @@
+                  HACKING
+                  =======
+
+
+== DEBIAN PACKAGING SETUP
+
+$ editor Makefile
+Makefile, install in $(DESTDIR)
+ex: 
+    install file $(DESTDIR)/etc/profile.d
+    install file $(DESTDIR)$(PREFIX)/share/icons
+    ...
+
+export GPGKEY=
+export DEBEMAIL=
+export DEBFULLNAME=
+
+$ DEBFULLNAME="Luc Pionchon" \
+dh_make \
+--native \
+--indep \
+--packagename p-_0.1 \
+--email pionchon.luc@gmail.com \
+--copyright gpl2
+
+ ==> creates ./debian/
+    with many templates
+    WARNING: missing the 'dirs' file
+             containing a list of install dirs
+             without a leading '/' !
+
+
+
+== RELEASE PROCESS
+
+### prepare distribution
+$ git clean
+$ make dist
+$ cd .dist/p-_<version>
+$ dpkg-buildpackage
+$   (verify packages)
+$ dpkg --install ../p-_<version>_all.deb
+$   (test installation)
+
+
+### push release
+$ git co master
+$ dch  (UNRELEASED --> unstable)
+$ sed -i -e "s/0.6/0.7/" p-package-manager.sh
+$ make dist
+$ cd .dist/p-_0.7
+$ p-src-build-package
+$ p-install-deb ../p-_0.7_all.deb
+$   (smoke test)
+
+$ git ci -m "version 0.7"
+$ git tag <version>
+$ git push --tags origin master
+
+
+### push packages
+$ git co debian-packages-archive
+$ cp .dist/p-_<version>??* .
+$ git add p-_<version>*
+$ git ci -m "0.7 packages"
+$ git push origin debian-packages-archive
+
+### push web page
+$ git co gh-pages
+$ editor index.html
+$ sed -i -e "s/0.6/0.7/" index.html
+$ git ci -m "link to 0.7"
+$ git push origin gh-pages
+
+$ git co master
+
+
+
