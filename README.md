@@ -50,3 +50,10 @@ NOTE 2: you can add the following code in your ~/.bashrc:
             ~/.bash.d/p-package-manager.sh
     fi
 
+
+
+
+
+## Home page
+
+Visit the project **home page** at **http://oluc.github.io/p-**
