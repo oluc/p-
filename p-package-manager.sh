@@ -69,7 +69,7 @@ _less_changelogs    () { zless /usr/share/doc/$1/changelog.*; }
 _dpkg_version       () { dpkg --status $1 | \grep "Version:"; }
 _aptit_search_descr () { aptitude search "?description($1)"; }
 #                                                                      #@p-help@
-#   <p-command>   =" <deb command>                  ## <min args>      #@p-help@
+#   <p- command>  =" <deb command>                  ## <min args>      #@p-help@
 #   ------------- =" ---------------                ## ------------    #@p-help@
 #                                                                      #@p-help@
 #---- Query installed packages:                                        #@p-help@
