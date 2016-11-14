@@ -79,4 +79,4 @@ $ git co master
 $ sed -i -e "s/0.7/0.8pre/" p-package-manager.sh
 $ dch          # (s/0.7/0.8pre/)
 $ git ci -m "0.8pre"
-
+$ git push
