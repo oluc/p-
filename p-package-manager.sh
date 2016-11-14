@@ -43,7 +43,7 @@
 #                                                                      #@p-help@
 #      The 'p-' package manager                                        #@p-help@
 #      ------------------------                                        #@p-help@
-#      version 0.8                                                     #@p-help@
+#      version 0.9pre                                                  #@p-help@
 #                                                                      #@p-xxx-help@
 #   p- is a wrapper to Debian package management.                      #@p-xxx-help@
 #   p- unifies calls to dpkg, aptitude, apt-get, etc.                  #@p-xxx-help@
