@@ -30,16 +30,23 @@ Plain simple.
 
 
 
+## OK, I want it!
+
+  1. grab the latest release
+     - go to https://github.com/oluc/p-/tree/debian-packages-archive
+     - download the '_all.deb' file with highest version number
+  2. install it, run: 'sudo dpkg --install p-_*_all.deb'
+  3. that's it. (you can run 'p-help' to start with)
 
 
-## For busy people: 3 step run
+## I am technical, I want to install it by myself
 
-  1. save the file in ~/.bash.d/p-package-manager.sh
-  2. bash 'source' it
-  3. run p-help
-
-That's it.
-
+     $ git clone https://github.com/oluc/p-.git
+     $ cd p-
+     $ mkdir ~/.bash.d
+     $ cp p-package-manager.sh ~/.bash.d/p-package-manager.sh
+     $ source ~/.bash.d/p-package-manager.sh
+     $ p-help
 
 NOTE 1: if you save it somewhere else, edit the alias 'p-help' (the first grep)
 
@@ -51,14 +58,12 @@ NOTE 2: you can add the following code in your ~/.bashrc:
     fi
 
 
+### Debian packages archive
+
+Current and previous released packages are at:
+https://github.com/oluc/p-/tree/debian-packages-archive
 
 
-
-## Home page
+## I want to know more
 
 Visit the project **home page** at **http://oluc.github.io/p-**
-
-
-## Debian packages archive
-
-https://github.com/oluc/p-/tree/debian-packages-archive
