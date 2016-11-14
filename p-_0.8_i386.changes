@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Wed, 14 Nov 2016 13:00:00 +0300
+Source: p-
+Binary: p-
+Architecture: source all
+Version: 0.8
+Distribution: unstable
+Urgency: low
+Maintainer: Luc Pionchon <pionchon.luc@gmail.com>
+Changed-By: Luc Pionchon <pionchon.luc@gmail.com>
+Description:
+ p-         - a simple package manager for Debian based systems.
+Changes:
+ p- (0.8) unstable; urgency=low
+ .
+   * new: added p-changelog
+   * fix: system does not find _pkg_names completion function anymore (??).
+          use own _pkg_names function.
+Checksums-Sha1:
+ e691410a9f34943715c9d4f29dc37fbc027a8546 577 p-_0.8.dsc
+ d3b180a741da2ab34257e00c47a4c64ad4e7027d 12119 p-_0.8.tar.gz
+ f2fa1322f096dcc7eadd98fed6f48cb58ce03cb9 5038 p-_0.8_all.deb
+Checksums-Sha256:
+ 8abd41746a45b802ff2e14f9c49152cc965ad9f9658537f0e3ac35c9afa7dc1b 577 p-_0.8.dsc
+ f11ea517110d635175bb15c2e14d253ce473d7469c0dd4f6b384e5394c619238 12119 p-_0.8.tar.gz
+ 2a7458110b41f0231728339c757ed47fa11609fd81e974aff046a21ca6446a95 5038 p-_0.8_all.deb
+Files:
+ ec7c3077bde88f99614aaa1be68e64b8 577 admin extra p-_0.8.dsc
+ 436784641691e29cf1757aba6917550a 12119 admin extra p-_0.8.tar.gz
+ f1dfc9a38a0f59e84528c38f9be55afe 5038 admin extra p-_0.8_all.deb
