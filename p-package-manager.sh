@@ -108,15 +108,28 @@ alias p-src-build-package="dpkg-buildpackage"       ## (no arg)        #@p-help@
 #
 # Bash completion
 #
-complete -F _pkg_names p-status
-complete -F _pkg_names p-list-files
-complete -F _pkg_names p-changelog
-complete -F _pkg_names p-version
 
-complete -F _pkg_names p-install
-complete -F _pkg_names p-remove
+_my_pkg_names()
+#-- taken from /usr/share/bash-completion/completions/pkgnames
+#-- (not sure why my system don't find it, and returns:)
+#-- ($ p-install [tab][tab] bash: completion: function `_pkg_names' not found)
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
+    return 0
+}
 
-complete -F _pkg_names p-src-get-source
-complete -F _pkg_names p-src-get-build-dep
+complete -F _my_pkg_names p-status
+complete -F _my_pkg_names p-list-files
+complete -F _my_pkg_names p-changelog
+complete -F _my_pkg_names p-version
+
+complete -F _my_pkg_names p-install
+complete -F _my_pkg_names p-remove
+
+complete -F _my_pkg_names p-src-get-source
+complete -F _my_pkg_names p-src-get-build-dep
 
 

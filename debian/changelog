@@ -1,6 +1,8 @@
 p- (0.8pre) UNRELEASED; urgency=low
 
   * new: added p-changelog
+  * fix: system does not find _pkg_names completion function anymore (??).
+         use own _pkg_names function.
 
  -- Luc Pionchon <pionchon.luc@gmail.com>  Wed, 19 Jun 2013 14:45:48 +0300
 
