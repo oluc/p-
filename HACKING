@@ -33,7 +33,7 @@ dh_make \
 
 == RELEASE PROCESS
 
-### prepare distribution
+### prepare distribution (test)
 $ git clean
 $ make dist
 $ cd .dist/p-_<version>
