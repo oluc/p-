@@ -57,3 +57,8 @@ NOTE 2: you can add the following code in your ~/.bashrc:
 ## Home page
 
 Visit the project **home page** at **http://oluc.github.io/p-**
+
+
+## Debian packages archive
+
+https://github.com/oluc/p-/tree/debian-packages-archive
